@@ -77,7 +77,7 @@ const LinkPage = () => {
     ? url?.custom_url
     : url?.short_url;
 
-  const shortLink = `https://trimrr.in/${link}`;
+  const shortLink = `${window.location.origin}/${link}`;
 
   const downloadImage = async () => {
     try {
