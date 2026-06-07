@@ -19,13 +19,14 @@ const RedirectLink = () => {
     fn();
   }, []);
 
-  useEffect(() => {
-    if (!loading && data) {
-      fnStats();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loading]);
 
+useEffect(() => {
+  if (!loading && data?.original_url) {
+    fnStats();
+
+    window.location.replace(data.original_url);
+  }
+}, [loading, data]);
   if (loading || loadingStats) {
     return (
       <>
