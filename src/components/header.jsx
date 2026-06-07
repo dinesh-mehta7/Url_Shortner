@@ -23,7 +23,7 @@ const Header = () => {
     <>
       <nav className="py-2 flex justify-between items-center">
         <Link to="/">
-          <img src="public/image.png" className="h-11" alt="Trimrr Logo" />
+          <img src="/image.png" className="h-11" alt="Trimrr Logo" />
         </Link>
         <div className="flex items-center gap-4">
           {!user ? (
@@ -32,7 +32,7 @@ const Header = () => {
             <DropdownMenu>
               <DropdownMenuTrigger className="w-10 rounded-full overflow-hidden">
                 <Avatar>
-                  <AvatarImage src={user?.user_metadata?.profile_pic || "public/512.gif"} />
+                  <AvatarImage src={user?.user_metadata?.profile_pic || "/512.gif"} />
                   <AvatarFallback>PA</AvatarFallback>
                 </Avatar>
               </DropdownMenuTrigger>
@@ -50,7 +50,7 @@ const Header = () => {
                 <DropdownMenuItem
                   onClick={() => {
                     fnLogout().then(() => {
-                      fetchUser();
+                      // fetchUser();
                       navigate("/auth");
                     });
                   }}
